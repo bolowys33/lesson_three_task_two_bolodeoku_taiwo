@@ -50,3 +50,140 @@ table {
 
 
 /* Write your css below here */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px 2fr 1fr 100px;
+    grid-template-areas: "head" "main" "aside" "foot";
+}
+
+p {
+    line-height: 30px;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 10px;
+    color: #282835;
+}
+
+a {
+    text-decoration: none;
+}
+
+aside a {
+    color: #000000;
+}
+
+header a {
+    color: #282835;
+    margin-top: 5px;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: #fff;
+    grid-area: main;
+    padding: 16px;
+    text-align: justify;
+}
+
+header {
+    background-color: #f1f1eb;
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    display: none;
+}
+
+aside {
+    background-color: #e7e9eb;
+    grid-area: aside;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+footer {
+    background-color: #282a35;
+    grid-area: foot;
+    text-align: center;
+    color: #e7e9eb;
+    
+}
+
+footer h3{
+    color: #f1f1eb;
+    padding-top: 20px;
+}
+
+a:hover {
+    color: aqua;
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 1.6fr 1fr;
+        grid-template-rows: 100px 1fr 100px;
+        grid-template-areas:
+            "head head"
+            "main aside"
+            "foot foot";
+    }
+
+
+    header {
+        justify-content: space-between;
+    }
+
+    header img {
+        display: block;
+        margin-left: 20px;
+    }
+
+    header nav {
+        flex-direction: row;
+        align-self: center;
+        margin-right: 50px;
+        font-size: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    header img {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 100px minmax(1fr auto) 100px;
+        grid-template-areas:
+            "head head"
+            "main aside"
+            "foot foot";
+    }     
+}
