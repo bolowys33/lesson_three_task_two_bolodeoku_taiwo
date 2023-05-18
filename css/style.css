@@ -71,6 +71,7 @@ h2,
 h3 {
     margin-top: 10px;
     color: #282835;
+    font-size: 25px;
 }
 
 a {
@@ -79,6 +80,7 @@ a {
 
 aside a {
     color: #000;
+    line-height: 25px;
 }
 
 header a {
@@ -109,10 +111,19 @@ header {
     grid-area: head;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 header img {
+    /* display: none; */
+}
+
+span{
+    margin-right: 20px;
+    font-size: 500px;
+}
+
+header nav a{
     display: none;
 }
 
@@ -139,7 +150,17 @@ footer h3{
 }
 
 a:hover {
-    color: aqua;
+    color: blue;
+}
+
+@media (width >= 600px){
+    header nav a{
+        display: block;
+    }
+
+    header span.material-icons{
+        display: none;
+    }
 }
 
 @media (width >= 768px) {
