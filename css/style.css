@@ -50,3 +50,149 @@ table {
 
 
 /* Write your css below here */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template: "head" 120px "main" 2fr "aside" 1fr "foot" 100px / 1fr;
+}
+
+p {
+    line-height: 30px;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 10px;
+    color: #282835;
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+aside a {
+    color: #000;
+    line-height: 25px;
+}
+
+header a {
+    color: #282835;
+    margin-top: 5px;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: #fff;
+    grid-area: main;
+    padding: 16px;
+    text-align: justify;
+}
+
+header {
+    background-color: #f1f1eb;
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    /* display: none; */
+}
+
+span{
+    margin-right: 20px;
+    font-size: 500px;
+}
+
+header nav a{
+    display: none;
+}
+
+aside {
+    background-color: #e7e9eb;
+    grid-area: aside;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+footer {
+    background-color: #282a35;
+    grid-area: foot;
+    text-align: center;
+    color: #e7e9eb;
+    
+}
+
+footer h3{
+    color: #f1f1eb;
+    padding-top: 20px;
+}
+
+a:hover {
+    color: blue;
+}
+
+@media (width >= 600px){
+    header nav a{
+        display: block;
+    }
+
+    header span.material-icons{
+        display: none;
+    }
+}
+
+@media (width >= 768px) {
+    .container {
+        grid-template: "head head" 100px "main aside" 1fr "foot foot" 100px / 1.6fr 1fr;
+    }
+
+
+    header {
+        justify-content: space-between;
+    }
+
+    header img {
+        display: block;
+        margin-left: 20px;
+    }
+
+    header nav {
+        flex-flow: row wrap;
+        align-self: center;
+        margin-right: 50px;
+        font-size: 20px;
+        justify-content: center;
+    }
+}
+
+@media (width >= 992px) {
+    .container {
+		grid-template: 100px minmax(1fr auto) 100px / 2fr 2fr;	
+        grid-template-areas:
+            "head head"
+            "main aside"
+            "foot foot";
+    }     
+}
